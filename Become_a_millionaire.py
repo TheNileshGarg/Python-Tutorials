@@ -101,12 +101,16 @@ def random_question():
 def game():
     i = 0
     while(i < 10):
+        print(f"You are going to answer the question for {rewards[i]} dollars.")
         ques = random_question()
         if(ques):
             i += 1
         else:
             break
-    money = rewards[i - 1]
+    if i > 1:
+        money = rewards[i - 1]
+    else:
+        money = 0
     print(f"Congratulations, You have won {money} dollars.")
 
 game()      
